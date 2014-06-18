@@ -73,7 +73,8 @@
 				D236C6191951730000CEC0CE /* LICENSE */,
 				D236C61B1951730000CEC0CE /* README.md */,
 			);
-			path = "swift-complex";
+			name = "swift-complex";
+			path = "swix/swift-complex";
 			sourceTree = "<group>";
 		};
 		D286498B19493D7E005DB9F0 /* swix */ = {
@@ -99,6 +100,7 @@
 		D2C7613E1948AC02000B74CE = {
 			isa = PBXGroup;
 			children = (
+				D236C6171951730000CEC0CE /* swift-complex */,
 				D286498B19493D7E005DB9F0 /* swix */,
 				D2C761491948AC02000B74CE /* tests */,
 				D2C761481948AC02000B74CE /* Products */,
@@ -117,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				D2C7614A1948AC02000B74CE /* main.swift */,
-				D236C6171951730000CEC0CE /* swift-complex */,
 			);
 			name = tests;
 			path = swix;

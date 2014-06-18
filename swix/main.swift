@@ -27,6 +27,10 @@ func abs_test1d(){
     assert(abs(x) == -1*x)
     println("    abs works (with Accelerate integration!)")
 }
+func complex_basic_test(){
+    assert(abs(1+1.i) == sqrt(2))
+    println("    1+1j == sqrt(2)")
+}
 func closeTest_1D(){
     var x = zeros(N)
     var y = zeros(N)+1e-10
@@ -117,12 +121,6 @@ func sum_2d(){
     assert(sum(y) == 4*4)
     println("    sum(ones((4,4)) = 4*4")
 }
-func numberClassTest(){
-    var x = number(n: 1, j:2)
-    var y = x.real
-    var z = x.imag
-    println("    x.real, x.imag accessible")
-}
 func twoD_arrayTest(){
     var x = array("[1 2; 4 5]")
     var z = zeros((2,2))
@@ -196,6 +194,7 @@ println("Preforming tests...")
 addTest_1D()
 mulTest_1D()
 closeTest_1D()
+complex_basic_test()
 a2Darray()
 addTest_2D()
 aboutEqual_2d()
@@ -210,7 +209,6 @@ l0norm_1d()
 l1norm_1d()
 l2norm_1d()
 sum_2d()
-numberClassTest()
 twoD_arrayTest()
 dot_test()
 assingment()
@@ -222,8 +220,4 @@ abs_test1d()
 fft_test()
 arange_test()
 arange_min_test()
-
-
-
-
 

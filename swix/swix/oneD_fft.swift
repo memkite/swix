@@ -34,10 +34,12 @@ func fft(x: matrix) -> (matrix, matrix){
     var yr = zeros(x.count)
     var yi = zeros(x.count)
     
+    var y = zeros(x.count)
     // slow but nice
     for i in 0..x.count{
         yr[i] = yy[i].real
         yi[i] = yy[i].imag
+//        y[i] = yy[i].real + yy[i].imag.i
     }
     return (yr, yi)
 }
