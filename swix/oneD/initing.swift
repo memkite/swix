@@ -7,21 +7,21 @@
 //
 
 import Foundation
-func diag(x: Double...) -> matrix2d{
-    let N = x.count
-    var y = zeros((N,N))
-    for i in 0..<N{
-        y[i][i] = x[i]
-    }
-    return y
-}
-func eye(N: Int) -> matrix2d{
-    var x = zeros((N,N))
-    for i in 0..<N{
-        x[i][i] = 1
-    }
-    return x
-}
+//func diag(x: Double...) -> matrix2d{
+//    let N = x.count
+//    var y = zeros((N,N))
+//    for i in 0..<N{
+//        y[i,i] = x[i]
+//    }
+//    return y
+//}
+//func eye(N: Int) -> matrix2d{
+//    var x = zeros((N,N))
+//    for i in 0..<N{
+//        x[i,i] = 1
+//    }
+//    return x
+//}
 func linspace(min: Double, max: Double, num: Int=50) -> matrix{
     var x = zeros(num)
     for i in 0..<num{

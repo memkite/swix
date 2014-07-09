@@ -19,7 +19,7 @@ let sqrt2 = sqrt(2.double)
 let epsilon = DBL_EPSILON // smallest difference of two doubles
 
 typealias matrix = [Double]
-typealias matrix2d = [[Double]]
+//typealias matrix2d = [[Double]]
 
 // add extension here -- indexing, x[0..4] = 1 etc
 extension Array{
@@ -30,30 +30,46 @@ extension Array{
         return ones(4)
     }
 }
-//struct matrix2d {
-//    let rows: Int, columns: Int
-//    var grid: [Double]
-//    var count: Int
-//    init(rows: Int, columns: Int) {
-//        self.rows = rows
-//        self.columns = columns
-//        grid = Array(count: rows * columns, repeatedValue: 0.0)
-//        self.count = row * columns
-//    }
-//    func indexIsValidForRow(row: Int, column: Int) -> Bool {
-//        return row >= 0 && row < rows && column >= 0 && column < columns
-//    }
-//    subscript(row: Int, column: Int) -> Double {
-//        get {
-//            assert(indexIsValidForRow(row, column: column), "Index out of range")
-//            return grid[(row * columns) + column]
-//        }
-//        set {
-//            assert(indexIsValidForRow(row, column: column), "Index out of range")
-//            grid[(row * columns) + column] = newValue
-//        }
-//    }
-//}
+struct matrix2d {
+    let rows: Int, columns: Int
+    var grid: [Double]
+    var count: Int
+    var shape: (Int, Int)
+    init(rows: Int, columns: Int) {
+        self.rows = rows
+        self.columns = columns
+        grid = Array(count: rows * columns, repeatedValue: 0.0)
+        self.count = rows * columns
+        self.shape = (rows, columns)
+    }
+    func indexIsValidForRow(row: Int, column: Int) -> Bool {
+        return row >= 0 && row < rows && column >= 0 && column < columns
+    }
+    subscript(row: Int, column: Int) -> Double {
+        get {
+            assert(indexIsValidForRow(row, column: column), "Index out of range")
+            return grid[(row * columns) + column]
+        }
+        set {
+            assert(indexIsValidForRow(row, column: column), "Index out of range")
+            grid[(row * columns) + column] = newValue
+        }
+    }
+    subscript(row: Int, column: String) -> matrix {
+        get {
+            var x:matrix = zeros(columns)
+            for i in 0..<columns{
+                x[i] = grid[((row-0)*columns) + i]
+            }
+            return x
+        }
+        set {
+          //for i in 0..<columns{
+          //    grid[row*columns + i] = newValue
+          //}
+        }
+    }
+}
 
 
 
